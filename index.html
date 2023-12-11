@@ -44,7 +44,7 @@
 
         // MTL Loader
         const mtlLoader = new MTLLoader();
-        mtlLoader.load('https://github.com/Tannin-H/Model-Viewer/raw/main/Models/deer_feeder/deer_feeder.mtl', function(materials) { // Materials file path
+        mtlLoader.load('Models/deer_feeder/deer_feeder.mtl', function(materials) { // Materials file path
             materials.preload();
 
             // OBJ Loader with Materials
@@ -52,7 +52,7 @@
             objLoader.setMaterials(materials);
 
             objLoader.load(
-                'https://github.com/Tannin-H/Model-Viewer/raw/main/Models/deer_feeder/deer_feeder.obj', // model filepath
+                'Models/deer_feeder/deer_feeder.obj', // model filepath
                 function(object) {
                     object.scale.set(0.003, 0.003, 0.003);
                     scene.add(object);
