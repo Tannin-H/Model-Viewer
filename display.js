@@ -37,9 +37,9 @@ function loadModel(modelData) {
         const objLoader = new OBJLoader();
         objLoader.setMaterials(materials);
         objLoader.load(modelData.obj, function (object) {
-            scene.add(object);
+            object.scale.set(0.003, 0.003, 0.003);
             object.position.set(0, 0, 0); // Adjust position if necessary
-            object.scale.set(0.003, 0.003, 0.003)
+            scene.add(object);
         }, onProgress, onError);
     });
 }
@@ -55,19 +55,26 @@ function onError() {
     console.error('An error happened during model loading.');
 }
 
-// Fetch model data from JSON file
-fetch('models.json')
-    .then(response => response.json())
-    .then(data => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const modelKey = urlParams.get('model');
-        if (modelKey && data.models[modelKey]) {
-            loadModel(data.models[modelKey]);
-        } else {
-            console.error('Model not found or no model specified');
-        }
-    })
-    .catch(error => console.error('Error fetching model configurations:', error));
+// PostMessage Listener
+window.addEventListener('message', function(event) {
+    // Optionally check event.origin here if you want to verify the source
+    if (event.data && event.data.type === 'loadModel') {
+        fetchModelConfig(event.data.model);
+    }
+}, false);
+
+function fetchModelConfig(modelKey) {
+    fetch('models.json')
+        .then(response => response.json())
+        .then(data => {
+            if (data.models[modelKey]) {
+                loadModel(data.models[modelKey]);
+            } else {
+                console.error('Model not found:', modelKey);
+            }
+        })
+        .catch(error => console.error('Error fetching model configurations:', error));
+}
 
 // Camera position
 camera.position.z = 5;
