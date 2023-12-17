@@ -1,0 +1,12 @@
+{
+    "models": {
+        "model1": {
+            "mtl": "Models/deer_feeder/deer_feeder.mtl",
+            "obj": "Models/deer_feeder/deer_feeder.obj"
+        },
+        "model2": {
+            "mtl": "path/to/model2.mtl",
+            "obj": "path/to/model2.obj"
+        }
+    }
+}

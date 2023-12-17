@@ -1,66 +1,81 @@
 import * as THREE from 'three';
-        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-        import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
-        import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 
-        // Instantiating variables
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-        const renderer = new THREE.WebGLRenderer();
-        const controls = new OrbitControls(camera, renderer.domElement);
+// Scene setup
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
 
-        // customising render and initializing
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setClearColor(0x000000); // Set background color to black
-        document.body.appendChild(renderer.domElement);
+// OrbitControls
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
 
-        // Positioning the camera away from and facing the model
-        camera.position.set(0, 7, 11);
-        camera.lookAt(0, 0, 0)
-        controls.update(); // must be called after any camera transformation
+// Lighting
+const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
+scene.add(ambientLight);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+scene.add(directionalLight);
 
-        // Lighting setup
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-        scene.add(directionalLight);
-        const light = new THREE.AmbientLight(0xffffff, 0.2);
-        scene.add(light);
+// Resize handler
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
 
-        // MTL Loader
-        const mtlLoader = new MTLLoader();
-        mtlLoader.load('Models/deer_feeder/deer_feeder.mtl', function(materials) {
-            materials.preload();
+window.addEventListener('resize', onWindowResize, false);
 
-            // OBJ Loader with Materials
-            const objLoader = new OBJLoader();
-            objLoader.setMaterials(materials);
+// Model loader
+function loadModel(modelData) {
+    const mtlLoader = new MTLLoader();
+    mtlLoader.load(modelData.mtl, function (materials) {
+        materials.preload();
+        const objLoader = new OBJLoader();
+        objLoader.setMaterials(materials);
+        objLoader.load(modelData.obj, function (object) {
+            scene.add(object);
+            object.position.set(0, 0, 0); // Adjust position if necessary
+        }, onProgress, onError);
+    });
+}
 
-            objLoader.load(
-                'Models/deer_feeder/deer_feeder.obj', // model filepath
-                function(object) {
-                    object.scale.set(0.003, 0.003, 0.003);
-                    scene.add(object);
-                },
-                function(xhr) {
-                    console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-                },
-                function(error) {
-                    console.log('An error happened');
-                }
-            );
-        });
+function onProgress(xhr) {
+    if (xhr.lengthComputable) {
+        const percentComplete = xhr.loaded / xhr.total * 100;
+        console.log('Model ' + Math.round(percentComplete, 2) + '% downloaded');
+    }
+}
 
-        window.addEventListener('resize', onWindowResize, false);
-        function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+function onError() {
+    console.error('An error happened during model loading.');
+}
+
+// Fetch model data from JSON file
+fetch('path/to/models.json')
+    .then(response => response.json())
+    .then(data => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const modelKey = urlParams.get('model');
+        if (modelKey && data.models[modelKey]) {
+            loadModel(data.models[modelKey]);
+        } else {
+            console.error('Model not found or no model specified');
         }
+    })
+    .catch(error => console.error('Error fetching model configurations:', error));
 
-        function animate() {
-            requestAnimationFrame(animate);
-            controls.update();
-            renderer.render(scene, camera);
-        };
+// Camera position
+camera.position.z = 5;
 
-        animate();
+// Animation loop
+function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+}
+
+animate();
