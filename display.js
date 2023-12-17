@@ -39,7 +39,7 @@ function loadModel(modelData) {
         objLoader.load(modelData.obj, function (object) {
             scene.add(object);
             object.position.set(0, 0, 0); // Adjust position if necessary
-            object.scale.set(0.3, 0.3, 0.3)
+            object.scale.set(0.003, 0.003, 0.003)
         }, onProgress, onError);
     });
 }
