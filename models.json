@@ -1,6 +1,6 @@
 {
     "models": {
-        "model1": {
+        "deer_feeder": {
             "mtl": "Models/deer_feeder/deer_feeder.mtl",
             "obj": "Models/deer_feeder/deer_feeder.obj"
         },

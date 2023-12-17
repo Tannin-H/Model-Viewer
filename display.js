@@ -55,7 +55,7 @@ function onError() {
 }
 
 // Fetch model data from JSON file
-fetch('path/to/models.json')
+fetch('models.json')
     .then(response => response.json())
     .then(data => {
         const urlParams = new URLSearchParams(window.location.search);
