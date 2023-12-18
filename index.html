@@ -2,6 +2,8 @@
 <html>
 <head>
     <style>
+       body { margin: 0; }
+        canvas { display: block; }
       #banner {
             position: fixed;
             top: 0;
@@ -13,6 +15,9 @@
             padding: 10px;
             box-sizing: border-box;
             z-index: 1000;
+        }
+        #banner img{
+          
         }
         #infoBox {
         position: fixed;
@@ -37,7 +42,9 @@
     </script>
 </head>
 <body>
-    <div id="banner">eZED</div>
+    <div id="banner">
+      <img src="assets/ezed-web-logo.png" alt="Logo">
+    </div>
     <div id="infoBox">Part Reference: XYZ</div>
     <script type="module" src="display.js"></script>
 
