@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-       body { margin: 0; }
-        canvas { display: block; }
-        banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #d2d2d2;
-            color: rgb(0, 0, 0);
-            font-size: 4vw;
-            padding-left: 10px;
-            padding-top: 7px;
-            box-sizing: border-box;
-            z-index: 1000;
-        }
+  <title>eZED Model Display</title>
+  <style>
+      body { margin: 0; }
+      canvas { display: block; }
 
-        #infoBox {
-            position: fixed;
-            bottom: 10px;
-            left: 10px;
-            background-color: #d2d2d2;
-            color: rgb(0, 0, 0);
-            font-size: 1.5vw;
-            padding: 10px;
-            border-radius: 10px;
-            box-sizing: border-box;
-            z-index: 1000;
-            opacity: 0.8;
-        }
-    </style>
+      #banner {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background-color: #d2d2d2;
+          padding: 10px;
+          box-sizing: border-box;
+          z-index: 1000;
+      }
+
+      #infoBox {
+          position: fixed;
+          bottom: 10px;
+          left: 10px;
+          background-color: #d2d2d2;
+          color: rgb(0, 0, 0);
+          font-size: 1.5vw;
+          padding: 10px;
+          border-radius: 10px;
+          box-sizing: border-box;
+          z-index: 1000;
+          opacity: 0.8;
+      }
+  </style>
     <script type="importmap">
       {
         "imports": {
