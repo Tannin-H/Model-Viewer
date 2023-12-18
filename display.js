@@ -57,6 +57,7 @@ function onError() {
 
 // PostMessage Listener
 window.addEventListener('message', function(event) {
+    console.log("Message received:", event.data);
     // Optionally check event.origin here if you want to verify the source
     if (event.data && event.data.type === 'loadModel') {
         fetchModelConfig(event.data.model);
@@ -75,6 +76,7 @@ function fetchModelConfig(modelKey) {
         })
         .catch(error => console.error('Error fetching model configurations:', error));
 }
+
 
 // Camera position
 camera.position.z = 5;
