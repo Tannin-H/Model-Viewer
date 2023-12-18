@@ -18,7 +18,7 @@ controls.enableDamping = true;
 // Lighting
 const ambientLight = new THREE.AmbientLight(0x404040, 4); // soft white light
 scene.add(ambientLight);
-const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.7);
 scene.add(directionalLight);
 
 // Resize handler
