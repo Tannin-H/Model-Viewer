@@ -8,14 +8,20 @@
       canvas { display: block; }
 
       #banner {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          background-color: #d2d2d2;
-          padding: 10px;
-          box-sizing: border-box;
-          z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 30px; 
+        width: 26vw;
+        box-sizing: border-box;
+        border-radius: 10px;
+        z-index: 1000;
+        background-color: #ffffff; 
+        }
+
+        #banner img {
+          max-width: 100%;
+          height: auto;
       }
 
       #infoBox {
@@ -31,11 +37,7 @@
           z-index: 1000;
           opacity: 0.8;
       }
-      #banner img {
-          max-width: 100%;
-          height: auto;
-      }
-
+    
       /* Media Queries */
       @media (max-width: 768px) {
           #infoBox {
@@ -60,7 +62,11 @@
     <div id="banner">
       <img src="assets/ezed-web-logo.png" alt="Logo">
     </div>
-    <div id="infoBox">Part Reference: XYZ</div>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const partReference = urlParams.get('model');
+    </script>
+    <div id="infoBox">Part Reference: </div>
     <script type="module" src="display.js"></script>
 
       
