@@ -12,7 +12,6 @@
         top: 0;
         left: 0;
         padding: 5px; 
-        width: 26vw;
         box-sizing: border-box;
         border-radius: 10px;
         z-index: 1000;
@@ -59,16 +58,18 @@
     </script>
 </head>
 <body>
-    <div id="banner">
+  <div id="banner">
       <img src="assets/ezed-web-logo.png" alt="Logo">
-    </div>
-    <script>
+  </div>
+  
+  <div id="infoBox">Part Reference: </div>
+
+  <script>
       const urlParams = new URLSearchParams(window.location.search);
       const partReference = urlParams.get('model');
-    </script>
-    <div id="infoBox">Part Reference: </div>
-    <script type="module" src="display.js"></script>
+      document.getElementById('infoBox').textContent = `Part Reference: ${partReference || 'Not specified'}`;
+  </script>
 
-      
+  <script type="module" src="display.js"></script>
 </body>
 </html>
