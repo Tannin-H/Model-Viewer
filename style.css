@@ -1,0 +1,58 @@
+body { margin: 0; }
+      canvas { display: block; }
+
+#banner {
+position: fixed;
+top: 0;
+left: 0;
+padding: 5px; 
+box-sizing: border-box;
+border-radius: 10px;
+z-index: 1000;
+background-color: #ffffff; 
+}
+
+#banner img {
+    max-width: 100%;
+    height: auto;
+}
+
+#infoBox {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: #d2d2d2;
+    color: rgb(0, 0, 0);
+    font-size: 1.5vw;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    z-index: 1000;
+    opacity: 0.8;
+}
+#loading-screen {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1001; /* Make sure it's above your 3D scene */
+}
+
+#loading-message {
+font-size: 24px;
+}
+/* Media Queries */
+@media (max-width: 768px) {
+    #infoBox {
+        font-size: 5vw;
+        padding: 5px;
+    }
+    #banner {
+        padding: 5px;
+    }
+}
