@@ -62,6 +62,7 @@ fetch('models.json')
     .then(data => {
         const urlParams = new URLSearchParams(window.location.search);
         const modelKey = urlParams.get('model');
+        console.log(modelKey)
         if (modelKey && data.models[modelKey]) {
             loadModel(data.models[modelKey]);
         } else {
