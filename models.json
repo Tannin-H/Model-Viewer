@@ -1,8 +1,8 @@
 {
     "models": {
         "Deer Feeder": {
-            "mtl": "Models/deer_feeder/deer_feeder.mtl",
-            "obj": "Models/deer_feeder/deer_feeder.obj"
+            "mtl": "Models/Deer Feeder/deer_feeder.mtl",
+            "obj": "Models/Deer Feeder/deer_feeder.obj"
         },
         "model2": {
             "mtl": "path/to/model2.mtl",
