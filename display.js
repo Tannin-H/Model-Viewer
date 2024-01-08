@@ -4,8 +4,8 @@ import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 
 // Loading screen variables
-const loadingWheel = document.getElementById('loader');
-
+const loadingScreen = document.getElementById('loading-screen');
+const loadingMessage = document.getElementById('loading-message');
 
 // Scene setup
 const scene = new THREE.Scene();
@@ -37,7 +37,8 @@ window.addEventListener('resize', onWindowResize, false);
 // Model loader
 function loadModel(modelData) {
     // Show loading screen
-    loadingWheel.style.display = 'flex';
+    loadingScreen.style.display = 'flex';
+    loadingMessage.textContent = 'Loading...';
 
     const mtlLoader = new MTLLoader();
     mtlLoader.load(modelData.mtl, function (materials) {
@@ -49,7 +50,7 @@ function loadModel(modelData) {
             object.position.set(0, 0, 0); // Adjust position if necessary
             object.scale.set(0.003, 0.003, 0.003)
             //hide loading screen once model is loaded
-            loadingWheel.style.display = 'none';
+            loadingScreen.style.display = 'none';
 
         }, onProgress, onError);
     });
@@ -58,10 +59,7 @@ function loadModel(modelData) {
 function onProgress(xhr) {
     if (xhr.lengthComputable) {
         const percentComplete = xhr.loaded / xhr.total * 100;
-        if (percentComplete === 100) {
-            console.log('Model fully loaded');
-            // Perform actions or stop loading here
-        }
+        console.log('Model ' + Math.round(percentComplete, 2) + '% downloaded');
     }
 }
 
