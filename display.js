@@ -4,8 +4,8 @@ import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 
 // Loading screen variables
-const loadingScreen = document.getElementById('loading-screen');
-const loadingMessage = document.getElementById('loading-message');
+const loadingWheel = document.getElementById('loading-screen');
+
 
 // Scene setup
 const scene = new THREE.Scene();
@@ -37,8 +37,7 @@ window.addEventListener('resize', onWindowResize, false);
 // Model loader
 function loadModel(modelData) {
     // Show loading screen
-    loadingScreen.style.display = 'flex';
-    loadingMessage.textContent = 'Loading...';
+    loadingWheel.style.display = 'flex';
 
     const mtlLoader = new MTLLoader();
     mtlLoader.load(modelData.mtl, function (materials) {
@@ -50,7 +49,7 @@ function loadModel(modelData) {
             object.position.set(0, 0, 0); // Adjust position if necessary
             object.scale.set(0.003, 0.003, 0.003)
             //hide loading screen once model is loaded
-            loadingScreen.style.display = 'none';
+            loadingWheel.style.display = 'none';
 
         }, onProgress, onError);
     });
@@ -62,7 +61,6 @@ function onProgress(xhr) {
         if (percentComplete === 100) {
             console.log('Model fully loaded');
             // Perform actions or stop loading here
-            loadingMessage.textContent = 'Model Loaded!';
         }
     }
 }
@@ -82,11 +80,9 @@ fetch('models.json')
             loadModel(data.models[modelKey]);
         } else {
             console.error('Model not found or no model specified');
-            loadingMessage.textContent = 'Error: Model not found';
         }
     })
     .catch(error => console.error('Error fetching model configurations:', error));
-    loadingMessage.textContent = 'Error fetching model configurations';
 
 // Camera position
 camera.position.z = 5;
