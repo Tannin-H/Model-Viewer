@@ -4,7 +4,7 @@ import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 
 // Loading screen variables
-const loadingWheel = document.getElementById('loading-screen');
+const loadingWheel = document.getElementById('loader');
 
 
 // Scene setup
