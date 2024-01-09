@@ -63,10 +63,9 @@ function loadModel(modelData) {
 
 
             camera.lookAt(center);
-            camera.position.set(0, centerY, 11)
+            camera.position.set(0, centerY, 5)
             controls.update();
             scene.add(object);
-            object.position.set(0, 0, 0); // Adjust position if necessary
             //hide loading screen once model is loaded
             loadingScreen.style.display = 'none';
 
