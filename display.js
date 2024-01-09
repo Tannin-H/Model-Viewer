@@ -9,7 +9,7 @@ const loadingMessage = document.getElementById('loading-message');
 
 // Scene setup
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0xffffff); // Set background color to white
@@ -63,6 +63,8 @@ function loadModel(modelData) {
 
 
             camera.lookAt(center);
+            camera.position.set(0, centerY, 11)
+            controls.update();
             scene.add(object);
             //hide loading screen once model is loaded
             loadingScreen.style.display = 'none';
@@ -98,7 +100,7 @@ fetch('models.json')
     .catch(error => console.error('Error fetching model configurations:', error));
 
 camera.position.set(0, centerY, 5)
-controls.update();
+
 // Animation loop
 function animate() {
     requestAnimationFrame(animate);
