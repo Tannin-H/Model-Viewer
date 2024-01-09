@@ -100,8 +100,6 @@ fetch('models.json')
     })
     .catch(error => console.error('Error fetching model configurations:', error));
 
-// Camera position
-camera.position.z = 5;
 
 // Animation loop
 function animate() {
