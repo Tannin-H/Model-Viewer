@@ -50,7 +50,7 @@ function loadModel(modelData) {
             const size = new THREE.Vector3();
             boundingBox.getSize(size);
 
-            const desiredSize = 9;
+            const desiredSize = 11;
             const scaleFactor = desiredSize / size.length();
             console.log(scaleFactor);
             object.scale.set(scaleFactor, scaleFactor, scaleFactor);
