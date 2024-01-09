@@ -63,8 +63,6 @@ function loadModel(modelData) {
 
 
             camera.lookAt(center);
-            camera.position.set(0, centerY, 5)
-            controls.update();
             scene.add(object);
             //hide loading screen once model is loaded
             loadingScreen.style.display = 'none';
@@ -99,7 +97,8 @@ fetch('models.json')
     })
     .catch(error => console.error('Error fetching model configurations:', error));
 
-
+camera.position.set(0, centerY, 5)
+controls.update();
 // Animation loop
 function animate() {
     requestAnimationFrame(animate);
