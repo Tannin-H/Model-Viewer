@@ -56,7 +56,7 @@ function loadModel(modelData) {
             
             scene.add(object);
             object.position.set(0, 0, 0); // Adjust position if necessary
-            object.scale.set(scaleFactor, scaleFactor, scaleFactor);
+            object.scale.set(0.003, 0.003, 0.003)
             //hide loading screen once model is loaded
             loadingScreen.style.display = 'none';
 
