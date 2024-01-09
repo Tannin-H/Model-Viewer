@@ -46,7 +46,8 @@ function loadModel(modelData) {
         const objLoader = new OBJLoader();
         objLoader.setMaterials(materials);
         objLoader.load(modelData.obj, function (object) {
-
+            const boundingBox = new THREE.Box3().setFromObject(object);
+            const size = new THREE.Vector3();
             
             scene.add(object);
             object.position.set(0, 0, 0); // Adjust position if necessary
