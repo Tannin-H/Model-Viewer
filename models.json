@@ -4,9 +4,5 @@
             "mtl": "Models/Deer Feeder/deer_feeder.mtl",
             "obj": "Models/Deer Feeder/deer_feeder.obj"
         }
-        ,"Electronics Case": {
-        "mtl": "Models/Electronics Case/Electronics Case.obj",
-        "obj": "Models/Electronics Case/Electronics Case.mtl"
-    }
     }
 }
