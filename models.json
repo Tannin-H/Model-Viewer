@@ -3,10 +3,10 @@
         "Deer Feeder": {
             "mtl": "Models/Deer Feeder/deer_feeder.mtl",
             "obj": "Models/Deer Feeder/deer_feeder.obj"
-        },
-        "model2": {
-            "mtl": "path/to/model2.mtl",
-            "obj": "path/to/model2.obj"
         }
+        ,"Electronics Case": {
+        "mtl": "Models/Electronics Case/Electronics Case.obj",
+        "obj": "Models/Electronics Case/Electronics Case.mtl"
+    }
     }
 }
