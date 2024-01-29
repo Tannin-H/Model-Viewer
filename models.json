@@ -1,12 +1,16 @@
 {
   "models" : {
+    "House Test" : {
+      "obj" : "Models\/House Test\/House Test.mtl",
+      "mtl" : "Models\/House Test\/House Test.obj"
+    },
     "Coil" : {
       "obj" : "Models\/Coil\/Coil.mtl",
       "mtl" : "Models\/Coil\/Coil.obj"
     },
     "Deer Feeder" : {
-      "obj" : "Models\/Deer Feeder\/deer_feeder.obj",
-      "mtl" : "Models\/Deer Feeder\/deer_feeder.mtl"
+      "mtl" : "Models\/Deer Feeder\/deer_feeder.mtl",
+      "obj" : "Models\/Deer Feeder\/deer_feeder.obj"
     }
   }
 }
