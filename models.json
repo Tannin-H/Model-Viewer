@@ -1,12 +1,14 @@
 {
-    "models": {
-        "Deer Feeder": {
-            "mtl": "Models/Deer Feeder/deer_feeder.mtl",
-            "obj": "Models/Deer Feeder/deer_feeder.obj"
-        } 
-        ,"Coil": {
-            "mtl": "Models/Coil/Coil.obj",
-            "obj": "Models/Coil/Coil.mtl"
-        }
-    }
+  "Deer Feeder" : {
+    "mtl" : "Models\/Deer Feeder\/deer_feeder.mtl",
+    "obj" : "Models\/Deer Feeder\/deer_feeder.obj"
+  },
+  "Test 14" : {
+    "mtl" : "Models\/Test 14\/Test 14.obj",
+    "obj" : "Models\/Test 14\/Test 14.mtl"
+  },
+  "Coil" : {
+    "obj" : "Models\/Coil\/Coil.mtl",
+    "mtl" : "Models\/Coil\/Coil.obj"
+  }
 }
