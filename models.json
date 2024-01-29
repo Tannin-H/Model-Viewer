@@ -1,3 +1,12 @@
 {
-
+    "models": {
+        "Deer Feeder": {
+            "mtl": "Models/Deer Feeder/deer_feeder.mtl",
+            "obj": "Models/Deer Feeder/deer_feeder.obj"
+        } 
+        ,"Coil": {
+            "mtl": "Models/Coil/Coil.obj",
+            "obj": "Models/Coil/Coil.mtl"
+        }
+    }
 }
