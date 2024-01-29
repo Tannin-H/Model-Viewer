@@ -1,6 +1,12 @@
 {
-  "Test 12" : {
-    "obj" : "Models\/Test 12\/Test 12.mtl",
-    "mtl" : "Models\/Test 12\/Test 12.obj"
-  }
+    "models": {
+        "Deer Feeder": {
+            "mtl": "Models/Deer Feeder/deer_feeder.mtl",
+            "obj": "Models/Deer Feeder/deer_feeder.obj"
+        } 
+        ,"Coil": {
+            "mtl": "Models/Coil/Coil.obj",
+            "obj": "Models/Coil/Coil.mtl"
+        }
+    }
 }
