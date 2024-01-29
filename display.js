@@ -51,7 +51,7 @@ function loadModel(modelData) {
             boundingBox.getSize(size);
             
             const desiredSize = 9;
-            const scaleFactor = desiredSize / Math.max(size.x, size.y, size.z);
+            const scaleFactor = size.length() > 0 ? desiredSize / size.length() : 1;
             console.log(scaleFactor);
             object.scale.set(scaleFactor, scaleFactor, scaleFactor);
 
