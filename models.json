@@ -1,8 +1,6 @@
 {
-  "Test 11" : {
-    "Test 11" : {
-      "obj" : "Models\/Test 11\/Test 11.mtl",
-      "mtl" : "Models\/Test 11\/Test 11.obj"
-    }
+  "Test 12" : {
+    "obj" : "Models\/Test 12\/Test 12.mtl",
+    "mtl" : "Models\/Test 12\/Test 12.obj"
   }
 }
