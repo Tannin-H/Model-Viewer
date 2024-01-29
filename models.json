@@ -1,13 +1,5 @@
 {
   "models" : {
-    "Test 34" : {
-      "obj" : "Models\/Test 34\/Test 34.mtl",
-      "mtl" : "Models\/Test 34\/Test 34.obj"
-    },
-    "Test 33" : {
-      "obj" : "Models\/Test 33\/Test 33.mtl",
-      "mtl" : "Models\/Test 33\/Test 33.obj"
-    },
     "Coil" : {
       "obj" : "Models\/Coil\/Coil.mtl",
       "mtl" : "Models\/Coil\/Coil.obj"
