@@ -51,17 +51,17 @@ function loadModel(modelData) {
             boundingBox.getSize(size);
             
             const desiredSize = 9;
-            const scaleFactor = size.length() > 0 ? desiredSize / size.length() : 1;
+            const scaleFactor = desiredSize / size.length();
             console.log(scaleFactor);
-            object.scale.set(0.3, 0.3, 0.3);
+            object.scale.set(scaleFactor, scaleFactor, scaleFactor);
 
             const center = new THREE.Vector3();
             boundingBox.getCenter(center);
 
-            const centerY = scaleFactor / size.y; 
-            console.log(centerY);
+            const centerY = scaleFactor / center.y
+            console.log(centerY)
 
-            camera.position.set(0, centerY, 11);
+            camera.position.set(0, centerY, 11)
             controls.update();
 
             scene.add(object);
