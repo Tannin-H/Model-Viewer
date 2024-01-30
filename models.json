@@ -1,8 +1,8 @@
 {
   "models" : {
     "house test" : {
-      "obj" : "Models\/house test\/house test.mtl",
-      "mtl" : "Models\/house test\/house test.obj"
+      "obj" : "Models\/House Test\/house test.mtl",
+      "mtl" : "Models\/House Test\/house test.obj"
     },
     "Coil" : {
       "obj" : "Models\/Coil\/Coil.mtl",
