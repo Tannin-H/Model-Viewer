@@ -9,6 +9,7 @@ The HTML content is deployed via GitHub Pages under the "pages" branch.
 - Any other embedded data within the OBJ file, such as positional data, will also be shown in the visualization.
 - Model scale is calculated via the length of the model's bounding box, and the camera height is set to the center of the same bounding box.
 - Models can be uploaded via the Upload Assistant desktop application. This assistant can be downloaded from the main branch of this repository.
+- The GitHub Pages Servers can take as long as 5 minutes to update.
 
 ### Accessing Your Chosen Model:
 The required model can be accessed via the QR code generated in the downloads folder or by altering the URL parameters.
@@ -18,6 +19,8 @@ The required model can be accessed via the QR code generated in the downloads fo
 Replace the fully capitalized field with the text displayed in the part reference field.
 
 #### NOTE: If this field is filled incorrectly (i.e., missing or does not match a model in the database), the application will continuously load.
+
+### Trouble Shooting
 
 ### Model Deletion Protocol
 1. Navigate to the pages branch 
