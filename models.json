@@ -1,28 +1,32 @@
 {
   "models" : {
-    "Format Test" : {
-      "obj" : "Models\/Format Test\/Format Test.obj",
-      "mtl" : "Models\/Format Test\/Format Test.mtl"
-    },
-    "Test" : {
-      "obj" : "Models\/Test\/Test.obj",
-      "mtl" : "Models\/Test\/Test.mtl"
-    },
     "house test" : {
       "obj" : "Models\/house test\/house test.obj",
       "mtl" : "Models\/house test\/house test.mtl"
-    },
-    "Deer Feeder" : {
-      "obj" : "Models\/Deer Feeder\/deer_feeder.obj",
-      "mtl" : "Models\/Deer Feeder\/deer_feeder.mtl"
     },
     "Test2" : {
       "obj" : "Models\/Test2\/Test2.obj",
       "mtl" : "Models\/Test2\/Test2.mtl"
     },
+    "Test" : {
+      "obj" : "Models\/Test\/Test.obj",
+      "mtl" : "Models\/Test\/Test.mtl"
+    },
     "Coil" : {
       "obj" : "Models\/Coil\/Coil.obj",
       "mtl" : "Models\/Coil\/Coil.mtl"
+    },
+    "Format Test" : {
+      "obj" : "Models\/Format Test\/Format Test.obj",
+      "mtl" : "Models\/Format Test\/Format Test.mtl"
+    },
+    "Deer Feeder" : {
+      "obj" : "Models\/Deer Feeder\/deer_feeder.obj",
+      "mtl" : "Models\/Deer Feeder\/deer_feeder.mtl"
+    },
+    "Test5" : {
+      "obj" : "Models\/Test5\/Test5.obj",
+      "mtl" : "Models\/Test5\/Test5.mtl"
     }
   }
 }
