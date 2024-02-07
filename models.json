@@ -1,28 +1,32 @@
 {
   "models" : {
     "house test" : {
-      "obj" : "Models\/house test\/house test.obj",
-      "mtl" : "Models\/house test\/house test.mtl"
+      "mtl" : "Models\/house test\/house test.mtl",
+      "obj" : "Models\/house test\/house test.obj"
     },
-    "Test2" : {
-      "obj" : "Models\/Test2\/Test2.obj",
-      "mtl" : "Models\/Test2\/Test2.mtl"
+    "Format Test" : {
+      "mtl" : "Models\/Format Test\/Format Test.mtl",
+      "obj" : "Models\/Format Test\/Format Test.obj"
+    },
+    "Thor6" : {
+      "mtl" : "Models\/Thor6\/Thor6.mtl",
+      "obj" : "Models\/Thor6\/Thor6.obj"
     },
     "Test" : {
       "obj" : "Models\/Test\/Test.obj",
       "mtl" : "Models\/Test\/Test.mtl"
     },
-    "Coil" : {
-      "obj" : "Models\/Coil\/Coil.obj",
-      "mtl" : "Models\/Coil\/Coil.mtl"
+    "Test2" : {
+      "obj" : "Models\/Test2\/Test2.obj",
+      "mtl" : "Models\/Test2\/Test2.mtl"
     },
-    "Format Test" : {
-      "obj" : "Models\/Format Test\/Format Test.obj",
-      "mtl" : "Models\/Format Test\/Format Test.mtl"
+    "Coil" : {
+      "mtl" : "Models\/Coil\/Coil.mtl",
+      "obj" : "Models\/Coil\/Coil.obj"
     },
     "Deer Feeder" : {
-      "obj" : "Models\/Deer Feeder\/deer_feeder.obj",
-      "mtl" : "Models\/Deer Feeder\/deer_feeder.mtl"
+      "mtl" : "Models\/Deer Feeder\/deer_feeder.mtl",
+      "obj" : "Models\/Deer Feeder\/deer_feeder.obj"
     },
     "Test5" : {
       "obj" : "Models\/Test5\/Test5.obj",
